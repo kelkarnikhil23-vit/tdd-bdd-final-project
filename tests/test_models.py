@@ -118,7 +118,7 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(read_product.price, product.price)
 
     def test_update_a_product(self):
-        """It should Update a Product"""        
+        """It should Update a Product"""
         product = ProductFactory()
         product.id = None
         product.create()
@@ -138,11 +138,11 @@ class TestProductModel(unittest.TestCase):
     def test_delete_a_product(self):
         """It should Delete a Product"""
         product = ProductFactory()
-        
+
         product.create()
         prods = Product.all()
         self.assertEqual(len(prods), 1)
-        
+
         product.delete()
         prods = Product.all()
         self.assertEqual(len(prods), 0)
@@ -155,7 +155,7 @@ class TestProductModel(unittest.TestCase):
         for i in range(5):
             product = ProductFactory()
             product.create()
-        
+
         prods = Product.all()
         self.assertEqual(len(prods), 5)
 
